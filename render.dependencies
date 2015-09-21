@@ -3,5 +3,11 @@
     "remote": "rk",
     "repository":	"android_kernel_asus_grouper",
     "target_path":	"kernel/asus/nexus7"
+  },
+  {
+    "remote": "bb",
+    "repository":	"UBERTC/arm-eabi-5.2",
+    "target_path":	"toolchains/arm-eabi-5.2",
+    "revision": "master"
   }
 ]
