@@ -2,7 +2,7 @@
   {
     "remote": "rk",
     "repository":	"android_kernel_asus_grouper",
-    "target_path":	"kernel/asus/nexus7"
+    "target_path":	"kernel/asus/grouper"
   },
   {
     "remote": "bb",
