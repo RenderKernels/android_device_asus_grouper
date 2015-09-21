@@ -1,4 +1,4 @@
-ifneq ($(filter nexus7,$(RENDER_PRODUCT)),)
+ifneq ($(filter grouper,$(RENDER_PRODUCT)),)
 
 include $(DEVICE_MAKEFILE)
 
