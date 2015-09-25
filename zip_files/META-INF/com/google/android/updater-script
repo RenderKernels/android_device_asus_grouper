@@ -1,0 +1,27 @@
+run_program("/sbin/dd", "if=/dev/block/platform/sdhci-tegra.3/by-name/LNX", "of=/tmp/boot.img");
+assert(getprop("ro.product.model") == "Nexus 7");
+package_extract_dir("kernel_installer", "/tmp");
+package_extract_file("zImage", "/tmp/zImage");
+set_metadata("/tmp/abootimg", "uid", 0, "gid", 0, "mode", 0755);
+set_metadata("/tmp/extractFilesFromTmpBoot.sh", "uid", 0, "gid", 0, "mode", 0755);
+run_program("/tmp/abootimg", "-u", "/tmp/boot.img", "-k", "/tmp/zImage");
+run_program("/sbin/dd", "if=/tmp/boot.img", "of=/dev/block/platform/sdhci-tegra.3/by-name/LNX");
+if ! is_mounted("/system") then
+run_program("/sbin/busybox", "mount", "system");
+endif;
+run_program("/sbin/dd", "if=/dev/block/platform/sdhci-tegra.3/by-name/LNX", "of=/tmp/tmp_boot.img");
+run_program("/tmp/extractFilesFromTmpBoot.sh");
+if
+file_getprop("/tmp/security.prop","security") == "0"
+then
+package_extract_dir("system", "/system");
+ui_print("Flash successful");
+endif;
+if
+file_getprop("/tmp/security.prop","security") == "1"
+then
+ui_print("Flash unsuccessful");
+ui_print("Kernel & Modules not installed");
+endif;
+
+ui_print("Done!");

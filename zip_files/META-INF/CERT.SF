@@ -1,0 +1,19 @@
+Signature-Version: 1.0
+Created-By: 1.0 (Android SignApk)
+SHA1-Digest-Manifest: x1SJ9z0KxLF0TSERXA4CUDqugyk=
+
+Name: kernel/extractFilesFromTmpBoot.sh
+SHA1-Digest-Manifest: Of0QwIeiF7CvfeZpWinqovEsMF8=
+
+Name: META-INF/com/google/android/updater-script
+SHA1-Digest-Manifest: UWPirpRABQYM/Dv53jNgR1DU3V4=
+
+Name: kernel/zImage
+SHA1-Digest-Manifest: Wvp78SXk48dcf6puZGUv0v+a6Vg=
+
+Name: kernel/abootimg
+SHA1-Digest-Manifest: 8nexyvGEYGvjAZp16R0POcK5ZH4=
+
+Name: META-INF/com/google/android/update-binary
+SHA1-Digest-Manifest: edON/+P1EO0+t+pnHqion22e0K4=
+

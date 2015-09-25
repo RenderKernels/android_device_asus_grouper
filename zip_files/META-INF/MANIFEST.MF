@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Created-By: 1.0 (Android SignApk)
+
+Name: kernel/extractFilesFromTmpBoot.sh
+SHA1-Digest: qYDU6FK/YmVAURaLtn3UZpJoji4=
+
+Name: META-INF/com/google/android/updater-script
+SHA1-Digest: F8jP+qPa9ZwE5D+f4RZrbd2u+io=
+
+Name: kernel/zImage
+SHA1-Digest: tISfl/VNRkm1J0dfLKApuy7vhgE=
+
+Name: kernel/abootimg
+SHA1-Digest: 9Z+ThHjFwAt9rozZuiPVLs1OUL4=
+
+Name: META-INF/com/google/android/update-binary
+SHA1-Digest: fxSugsXO7pDY6tsv1O8i5/a0ESE=
+
