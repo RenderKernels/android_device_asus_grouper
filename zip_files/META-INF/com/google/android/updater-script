@@ -4,6 +4,7 @@ package_extract_dir("kernel_installer", "/tmp");
 package_extract_file("zImage", "/tmp/zImage");
 set_metadata("/tmp/abootimg", "uid", 0, "gid", 0, "mode", 0755);
 set_metadata("/tmp/extractFilesFromTmpBoot.sh", "uid", 0, "gid", 0, "mode", 0755);
+run_program("/tmp/abootimg", "-x", "/tmp/boot.img", "/tmp/oldcfg", "/tmp/oldzImage", "/tmp/oldinitrd.img");
 run_program("/tmp/abootimg", "-u", "/tmp/boot.img", "-k", "/tmp/zImage");
 run_program("/sbin/dd", "if=/tmp/boot.img", "of=/dev/block/platform/sdhci-tegra.3/by-name/LNX");
 if ! is_mounted("/system") then
@@ -12,6 +13,15 @@ endif;
 run_program("/sbin/dd", "if=/dev/block/platform/sdhci-tegra.3/by-name/LNX", "of=/tmp/tmp_boot.img");
 run_program("/tmp/abootimg", "-x", "/tmp/tmp_boot.img", "/tmp/extractedcfg", "/tmp/extractedzImage", "/tmp/extractedinitrd.img");
 if
+ui_print("Old kernel sha1 crc: ");
+ui_print(sha1_check(read_file("/tmp/oldzImage")));
+ui_print(" ");
+ui_print("New kernel sha1 crc: ");
+ui_print(sha1_check(read_file("/tmp/zImage")));
+ui_print(" ");
+ui_print("Flashed kernel sha1 crc: ");
+ui_print(sha1_check(read_file("/tmp/extractedzImage")));
+ui_print(" ");
 sha1_check(read_file("/tmp/zImage")) == sha1_check(read_file("/tmp/extractedzImage"))
 then
 package_extract_dir("system", "/system");
