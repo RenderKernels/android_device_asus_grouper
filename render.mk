@@ -1,3 +1,5 @@
+include vendor/render/configs/common.mk
+
 PRODUCT_NAME := render_grouper
 PRODUCT_DEFCONFIG := tegra3_android_defconfig
 PRODUCT_KERNEL_SOURCE := kernel/asus/grouper
@@ -6,4 +8,5 @@ ARCH := arm
 ZIMAGE := arch/arm/boot/zImage
 ZIP_FILES_DIR := device/asus/grouper/zip_files
 
-include vendor/render/configs/common.mk
+#Override with my custom versioning -Snuzzo was here
+EXTRAVERSION := -Plain-Kernels-$(BUILD_VERSION)
