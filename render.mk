@@ -9,4 +9,7 @@ ZIMAGE := arch/arm/boot/zImage
 ZIP_FILES_DIR := device/asus/grouper/zip_files
 
 #Override with my custom versioning -Snuzzo was here
-EXTRAVERSION := -Plain-Kernels-$(BUILD_VERSION)
+EXTRAVERSION := -Plain-Kernels-$(BUILD_VERSION)-StayPuft
+
+KBUILD_BUILD_USER := Snuzzo
+KBUILD_BUILD_HOST := RenderServer.net
