@@ -13,3 +13,5 @@ EXTRAVERSION := -Plain-Kernels-$(BUILD_VERSION)-Lawlly
 
 KBUILD_BUILD_USER := Snuzzo
 KBUILD_BUILD_HOST := RenderServer.net
+
+PACKAGE_TARGET_NAME := Plain-Kernels-Lawlly-$(RENDER_PRODUCT).$(shell date -u +%m.%d).zip
