@@ -5,7 +5,6 @@ PRODUCT_DEFCONFIG := tegra3_android_defconfig
 PRODUCT_KERNEL_SOURCE := kernel/asus/grouper
 CROSS_COMPILE := $(ANDROID_BUILD_TOP)/toolchains/arm-eabi-5.2/bin/arm-eabi-
 ARCH := arm
-ZIMAGE := arch/arm/boot/zImage
 ZIP_FILES_DIR := device/asus/grouper/zip_files
 
 #Override with my custom versioning -Snuzzo was here
